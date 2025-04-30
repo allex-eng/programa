@@ -1,6 +1,3 @@
-# Fazer um programa para solicitar o valor de uma venda e
-# o percentual da comissão e exibir o valor da comissão
-
 valor_venda = float(input('digite o valor da venda (R$)' ))
 percentual = float(input('informe a comissão (%)......: ' ))
 
