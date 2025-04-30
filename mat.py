@@ -1,6 +1,6 @@
 print("cálculo da média aritmética de 4 notas")
 
-nota1 = 6.5
+nota1 = 6.3
 nota2 = 7.0
 nota3 = 4.9
 nota4 = 6.3
