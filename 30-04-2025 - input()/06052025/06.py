@@ -11,7 +11,7 @@ acel = int(input("informer a acaleraçao"))
 delta = velo * tempo + (acel * (tempo * tempo)) / 2
 
 
-print(f"o resultando de delta é {delta} ")
+print(f"o resultando de delta é {delta} ")h
 
 
 
