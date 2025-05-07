@@ -15,7 +15,7 @@ distancia *= 100
 v_ini /= 3.6
 
 delta = v_ini ** 2 - 4 * acelera * distancia
-if delta <=0:
+if delta <0:
     sys.exit(' não é possivel calcular o delta')
 
 t=(-v_ini + distancia ** 0.5) / (2 * acelera)  
