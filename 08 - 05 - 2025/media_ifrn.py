@@ -14,10 +14,11 @@ etapa2 = int(input('informe a nota da etapa 2: '))
 if etapa2 < 0 or etapa2  > 100:
     sys.exit('ERRO: nota 2 inválida. informer nota entra 0 e 100.')
 
-media = (etapa1 * 2 + etapa2 * 3) / 5
+media = int(round(etapa1 * 2 + etapa2 * 3) / 5, 0)
+print(f'media do aluno {media}')
 print(f'media do aluno:{media:.0f}')  
 
-if media >= 60:
+if media >= 59.5:
     print('aluno aprovado.')
 elif media >=20:
     print ('aluno ira fazer prova final')  
