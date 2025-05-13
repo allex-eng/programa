@@ -10,15 +10,8 @@ Acutângulo: possui todos os angulos internos agudos (menores que 90)
 '''
 import sys
 
-cat_a = input('qual o angulo do cateto adjacente')
-if cat_a < 0 or cat_a > 100:
-    sys.exit('pegadinha')
-cat_o = input('qual o angulo do cateto oposto')
-if cat_o < 0 or cat_o > 100:
-    sys.exit(' pergadinha')
-
-hip = input('informe o valor da hipotenusa')  
-if hip < 0 or hip > 100:
-    sys.exit('eraddo')  
-
-trian = cat_a + cat_o + hip
+angA = int(input('digite o angulo A:'))
+angB = int(input('digite o angulo B: '))
+angC = int(input('digite o angulo C: '))
+if (angA <= 0) or (angB <= 0) or (angC <= 0):
+    sys.exit('ERRO:')
