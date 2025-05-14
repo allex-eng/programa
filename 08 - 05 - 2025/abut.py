@@ -8,10 +8,10 @@ retãngulos: possui um ângulos internos reto (igual a 90)
 obtusãngulo: possui um ângulo interno obtuso (maior do que 90)
 Acutângulo: possui todos os angulos internos agudos (menores que 90)
 '''
-import sys
-
-angA = int(input('digite o angulo A:'))
-angB = int(input('digite o angulo B: '))
-angC = int(input('digite o angulo C: '))
-if (angA <= 0) or (angB <= 0) or (angC <= 0):
-    sys.exit('ERRO:')
+n = int(input('digite o valor: '))
+soma = 1
+x = 1
+while x <= n:
+    soma = soma + x
+    x = x + 1 
+    print(f'o resultando é,{soma}')
