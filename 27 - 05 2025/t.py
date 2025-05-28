@@ -1,18 +1,18 @@
 try:
-   valor = int(input('informer o multiplicado'))
-   if valor <= 0:
-       print('erro')
+    multiplicando = int(input("Digite o multiplicando: "))
+    multiplicador = int(input("Digite o multiplicador: "))
 
-       x = int(input('informer o multlicando'))
-       if x <= 0:
-        print('erro')
+    if multiplicando < 0 or multiplicador < 0:
+        print("Por favor, digite apenas números inteiros positivos.")
+    else:
+        resultado = 0
+        contador = 0
 
-        while valor <= 10:
-            print(f'multiplicando')
+        while contador < multiplicador:
+            resultado += multiplicando
+            contador += 1
+
+        print(f"{multiplicando} x {multiplicador} = {resultado}")
+
 except ValueError:
-    print('não!!!!1')  
-
-
-
-
-
+    print("Entrada inválida! Por favor, digite apenas números inteiros.")
