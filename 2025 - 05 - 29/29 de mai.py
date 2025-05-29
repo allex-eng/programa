@@ -16,6 +16,7 @@ else:
 while div2 <= numero:
     if numero % div2 ==0:
         div += 1
+        
 
 
 
