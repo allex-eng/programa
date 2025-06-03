@@ -1,21 +1,30 @@
 import sys
 
+numero = None
+
 try:
-    numero = int(input('Digite um valor: '))
-except ValueError:
-    sys.exit('ERRO: Valor inválido, digite um número positivo.')
+    numero = int(input('Digite um numero para calcular se é primo: '))
+
+except ValueError: 
+    sys.exit('ERRO: Digite um número inteiro positivo.')
+
 except Exception as e:
     sys.exit(f'ERRO: {e}')
 
-if numero <= 0:
-    sys.exit('ERRO: Digite um valor positivo.')
-
 else:
-    div = 1
-    div2 = 2
-while div2 <= numero:
-    if numero % div2 ==0:
-        div += 1
+    divisores = 1
+    contDivisor = 0 # poderia tambem ja iniciar com 2
+    while divisores <= numero:
+        if (numero % divisores) == 0:
+            contDivisor += 1
+        divisores += 1
+
+    if contDivisor == 2:
+        print(f'{numero} é primo.')
+    else:
+        print(f'{numero} não é primo')
+
+
         
 
 
