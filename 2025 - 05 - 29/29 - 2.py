@@ -1,24 +1,29 @@
+
 import sys
-from xml.dom.expatbuilder import InternalSubsetExtractor
+
+numero = None
+
 try:
-    valor = int(input('digite um valor'))
-except ValueError:
-    sys.exit('ERRO: Valor inválido, digite um número positivo.')
+    numero = int(input('Digite um numero para calcular seu fatorial: '))
+
+except ValueError: 
+    sys.exit('ERRO: Digite um número inteiro positivo')
+
 except Exception as e:
     sys.exit(f'ERRO: {e}')
+
 else:
-     if valor <0:
-         print('não é fotorial')
-    elif valor < 2:
-        print(f'{valor}! = 1')
-        else:
-            intfatorial = valor
-            interavx -=1
+    if numero < 0:
+        print('Não existe fatorial.')
+    elif numero < 2:
+        print(f'Fatorial de {numero} = 1')
 
-    intfatorial * = Interavx
-            
-
-
-  
-
+    else:
+        resultado = numero
+        contador = numero
         
+        while contador > 1:
+            resultado *= (numero - 1)
+            contador -= 1
+        
+        print(f'Fatorial de {numero} = {resultado}')
