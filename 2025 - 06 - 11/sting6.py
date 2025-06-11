@@ -42,12 +42,12 @@ intocorrencias = strTexto.lower().count(strPalavra)
 print(f'apalavra {strPalavra} aparece {intocorrencias} vezes')
 
 intPosicao = 0
-while True:
+for i in range (intocorrencias):
     intPosicao = strTexto.lower().find(strPalavra, intPosicao)
-    if intPosicao == -1: break
+    
 
     print(intPosicao) 
-    intPosicao += 1
+    intPosicao += len(strPalavra)
 
 
 
