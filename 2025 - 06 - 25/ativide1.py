@@ -1,4 +1,4 @@
-import sys, random, math
+import sys, random  
 
 try:
     intN = int(input('Informe o valor de N (1 a 100): '))
@@ -11,16 +11,15 @@ except Exception as erro:
 
 listavalores = list()
 
-intcontaodr = 1
-while intcontaodr <= intN:
-    intvalor = random.randint(0,1000)
-    
-    if intvalor not in listavalores:
-        listavalores.append(intvalor)
-        intcontaodr += 1
-            
+for _ in range(intN):
+    intvalor = random.randint(-100,100)
+    listavalores.append(intvalor)
+
 print(listavalores)   
 
+lispares = list()
 for intvalor in listavalores:
-    raiz = math.sqrt(intvalor) 
-    print(f'Valor: {intvalor} - Raiz quadrada: {raiz:.2f}')
+    if intvalor % 2 == 0:
+        lispares.append(intvalor)
+
+print(lispares)
