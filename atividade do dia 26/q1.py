@@ -30,8 +30,17 @@ lstNomes = ['Scooby-Doo'       , 'Fred Flintstone', 'Zé Colmeia' , 'Dom Pixote'
 
 # ----------------------------------------------------------------------
 # Questão 01
+import sys
 import random
-intN = int(input('Informe o valor de N (número de notas por nome): '))
+
+try:
+    intN = int(input('Informe o valor de N (número de notas por nome): '))
+    if intN <= 0:
+        sys.exit('Valor inválido: o número deve estar entre 0 e 20.')
+except ValueError:
+    sys.exit('\nERRO: informe um valor inteiro válido...')
+except Exception as erro:
+    sys.exit(f'\nERRO inesperado: {erro}...')
 
 lstNotas_1 = [[random.randint(0, 100) for _ in range(intN)] for _ in lstNomes]
 lstNotas_2 = [[random.randint(0, 100) for _ in range(intN)] for _ in lstNomes]
@@ -47,7 +56,8 @@ lstBoletins = [[lstNomes[i], lstNotas_1[i], lstNotas_2[i]] for i in range(len(ls
 
 # ----------------------------------------------------------------------
 # Questão 03
-
+media = sum( lstNotas_1 + lstNotas_2)
+print(f'a media é  {media}')
 
 # ----------------------------------------------------------------------
 # Questão 04
