@@ -56,8 +56,21 @@ lstBoletins = [[lstNomes[i], lstNotas_1[i], lstNotas_2[i]] for i in range(len(ls
 
 # ----------------------------------------------------------------------
 # Questão 03
-media = sum( lstNotas_1 + lstNotas_2)
-print(f'a media é  {media}')
+lstBoletins = [
+    boletim + [
+        round(((sum(boletim[1]) / len(boletim[1]) + sum(boletim[2]) / len(boletim[2])) / 2), 2),
+        "Aprovado" if ((sum(boletim[1]) / len(boletim[1]) + sum(boletim[2]) / len(boletim[2])) / 2) >= 60
+        else "Prova Final" if ((sum(boletim[1]) / len(boletim[1]) + sum(boletim[2]) / len(boletim[2])) / 2) >= 30
+        else "Reprovado"
+    ]
+    for boletim in lstBoletins
+]
+
+print("\nBoletins (compreensão de lista):")
+for b in lstBoletins:
+    print(f"{b[0]:<20} | Média: {b[3]:5.2f} | Situação: {b[4]}")
+
+
 
 # ----------------------------------------------------------------------
 # Questão 04
