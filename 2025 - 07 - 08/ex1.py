@@ -1,23 +1,20 @@
 import os
 
-strdir = os.path.dirname(__file__) 
+strdir = os.path.dirname(__file__)
+
 try:
-    argleitura = open(f'{str}\\carta.txt', 'r ', encoding = 'utf-8')
-    strconteudo = argleitura.readlines()
-    argleitura.close()
-    print(strconteudo)
+    with open(f'{strdir}\\carta.txt', 'r', encoding='utf-8') as argleitura:
+        strconteudo = argleitura.readlines()
+        print(strconteudo)
+
+        print('-' * 80)
+        for linha in strconteudo:
+            print(linha.strip())
 
 except FileNotFoundError:
     print('ERRO: arquivo não existe')
 
-
 except Exception as erro:
     print(f'Erro: {erro}')
 
-while True:
-    strconteudo = argleitura.readline()
-    if not strconteudo:break
-    
-    print('-' * 80)
-    print(strconteudo).strip()
 
