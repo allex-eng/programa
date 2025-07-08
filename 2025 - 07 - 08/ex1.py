@@ -13,15 +13,11 @@ except FileNotFoundError:
 
 except Exception as erro:
     print(f'Erro: {erro}')
-else:
-    strconteudo = argleitura.readline()
-    argleitura.close()
-    print(strconteudo)
-  
+
 while True:
     strconteudo = argleitura.readline()
-    if not strconteudo:
-        break
+    if not strconteudo:break
+    
     print('-' * 80)
     print(strconteudo).strip()
 
