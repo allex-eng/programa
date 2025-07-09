@@ -1,32 +1,42 @@
-import os,sys
+import os, sys
 
-strdir = os.path.dirname(__file__)
+# Obtendo o diretório onde o programa está salvo
+strDir = os.path.dirname(__file__)
 
+# Abrindo e lendo o arquivo
 try:
-    arqleitura = open(f'{strdir}\\times.csv', 'r', encoding='utf-8')
+   arqLeitura = open(f'{strDir}\\times_header.csv', 'r', encoding='utf-8')
 except FileNotFoundError:
-    sys.exit('\nerro!: arquivo não existe')
+   sys.exit('\nERRO: Arquivo não encontrado...')
 except Exception as erro:
-    sys.exit(f'Erro: {erro}')
+   sys.exit(f'\nERRO: {erro}')
 else:
-    lsttimes = []
-    while True:
-        strlinha = arqleitura.readline().strip()
-        if not strlinha:
-            break
+   lstTimes = list()
+   lstCabecalho = arqLeitura.readline().strip().split(';')
+   while True:
+      # Lendo a linha e armazendo na variável
+      strLinha = arqLeitura.readline().strip()   
+      # Interrompe o laço quando não há conteúdo na linha (EOF)
+      if not strLinha: break
+      # Transforma a string em uma lista convertendo os valores para inteiro
+      lstAux = [int(i) if i.isdigit() else i for i in strLinha.split(';')]
+      # Adicionando os dados na lista
+      lstTimes.append(lstAux)
+   arqLeitura.close()
 
-        lstaux = [int(i) if i.isdigit() else i for i in strlinha.split(';')]
-        lsttimes.append(lstaux)
-    arqleitura.close()
+# Adionando a pontuação e o saldo de gols
+for time in lstTimes:
+   time.insert(4, time[1]*3 + time[2])
+   time.append(time[5] - time[6])
 
-    for time in lsttimes:
-        
-        time.insert(4, time[1]*3 + time[2])
-     
-        time.append(time[5] - time[6])
+# Adicionando mais dois cabeçalhos
+lstCabecalho.insert(4, 'Pontuação')
+lstCabecalho.append('Saldo de Gols')
 
-    
-    lsttimes.sort(key=lambda time: (time[4], time[1], time[7], time[5]), reverse=True)
+# Classificando os times
+lstTimes.sort(key=lambda time: (time[4], time[1], time[7], time[5]), reverse=True)
 
-    for time in lsttimes:
-        print(time)
+# Imprimindo o conteúdo da lista
+print(lstCabecalho)
+for time in lstTimes:
+   print(time)
