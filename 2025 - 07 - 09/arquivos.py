@@ -3,7 +3,7 @@ import os,sys
 strdir = os.path.dirname(__file__)
 
 try:
-  arqleitura = open(f'{strdir}\\ times.csv ', 'r', encoding='utf-8')
+  arqleitura = open(f'{strdir}\\ times.csv', 'r', encoding='utf-8')
 except FileNotFoundError:
     sys.exit('\nerro!: arquivo não existe')
 
@@ -17,7 +17,10 @@ else:
 
         if not strlinha: break
 
-        lsttimes.append()
+        
+        lstaux = [int(i) if i.isdigit() else i for i in strlinha.split(';')]
+
+        lsttimes.append(lstaux)
 
         arqleitura.close()
 
