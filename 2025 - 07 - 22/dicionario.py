@@ -17,11 +17,9 @@ except json.JSONDecodeError:
 except exception as erro:
     sys.exit(f'{erro}')
 else:
-    lstchaves =list(dictcartola.keys())
+     lstchaves =list(dictcartola.key())
 
-    print(dictcartola['status'])
-finally:
-    print('fim')
+strclube = input('informe:').strip().lower()
 
 
 
